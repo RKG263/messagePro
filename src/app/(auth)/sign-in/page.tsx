@@ -29,7 +29,7 @@ export default function SignInForm() {
     },
   });
 
-  const { toast } = useToast();
+  const { toast} = useToast();
   const onSubmit = async (data: z.infer<typeof signInSchema>) => {
     const result = await signIn('credentials', {
       redirect: false,
