@@ -19,7 +19,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" >
       <AuthProvider>
-        <body className={inter.className}>
+        <body className={inter.className} style={{ background: 'linear-gradient(to right, #38b2ac, #4299e1, #9f7aea)' }}>
           {children}
           <Toaster />
         </body>

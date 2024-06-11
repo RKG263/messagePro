@@ -1,5 +1,4 @@
-'use client';
-
+'use client'
 import { ApiResponse } from '@/types/ApiResponse';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
@@ -97,14 +96,15 @@ export default function SignUpForm() {
     }
   };
 
+  
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-800">
-      <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600">
+      <div className="w-full max-w-md p-8 rounded-lg shadow-2xl  backdrop-blur-md">
         <div className="text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
-            Join True Feedback
+          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6 text-gray-900">
+            HoP in YapNap
           </h1>
-          <p className="mb-4">Sign up to start your anonymous adventure</p>
+          <p className="mb-4 text-gray-800">Sign up to start your anonymous adventure</p>
         </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -113,21 +113,22 @@ export default function SignUpForm() {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Username</FormLabel>
+                  <FormLabel className="text-gray-800">Username</FormLabel>
                   <Input
                     {...field}
                     onChange={(e) => {
                       field.onChange(e);
                       setUsername(e.target.value);
                     }}
+                    className="bg-transparent border-b border-blue-400 focus:outline-none focus:border-blue-500 text-gray-800 placeholder-gray-400"
                   />
                   {isCheckingUsername && <Loader2 className="animate-spin" />}
                   {!isCheckingUsername && usernameMessage && (
                     <p
                       className={`text-sm ${
                         usernameMessage === 'Username is unique'
-                          ? 'text-green-500'
-                          : 'text-red-500'
+                          ? 'text-green-300'
+                          : 'text-red-300'
                       }`}
                     >
                       {usernameMessage}
@@ -142,26 +143,35 @@ export default function SignUpForm() {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <Input {...field} name="email" />
-                  <p className='text-muted text-gray-400 text-sm'>We will send you a verification code</p>
+                  <FormLabel className="text-gray-800">Email</FormLabel>
+                  <Input
+                    {...field}
+                    name="email"
+                    className="bg-transparent border-b border-blue-400 focus:outline-none focus:border-blue-500 text-gray-800 placeholder-gray-400"
+                  />
+                  <p className='text-gray-600 text-sm'>We will send you a verification code</p>
                   <FormMessage />
                 </FormItem>
               )}
             />
-
+  
             <FormField
               name="password"
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
-                  <Input type="password" {...field} name="password" />
+                  <FormLabel className="text-gray-800">Password</FormLabel>
+                  <Input
+                    type="password"
+                    {...field}
+                    name="password"
+                    className="bg-transparent border-b border-blue-400 focus:outline-none focus:border-blue-500 text-gray-800 placeholder-gray-400"
+                  />
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit" className='w-full' disabled={isSubmitting}>
+            <Button type="submit" className='w-full bg-blue-600 hover:bg-blue-700 text-white' disabled={isSubmitting}>
               {isSubmitting ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -176,7 +186,7 @@ export default function SignUpForm() {
         <div className="text-center mt-4">
           <p>
             Already a member?{' '}
-            <Link href="/sign-in" className="text-blue-600 hover:text-blue-800">
+            <Link href="/sign-in" className="text-blue-900 hover:text-black">
               Sign in
             </Link>
           </p>
@@ -184,4 +194,7 @@ export default function SignUpForm() {
       </div>
     </div>
   );
+  
+  
+    
 }

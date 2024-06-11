@@ -29,7 +29,7 @@ export default function SignInForm() {
     },
   });
 
-  const { toast} = useToast();
+  const { toast } = useToast();
   const onSubmit = async (data: z.infer<typeof signInSchema>) => {
     const result = await signIn('credentials', {
       redirect: false,
@@ -59,13 +59,13 @@ export default function SignInForm() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-800">
-      <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600">
+      <div className="w-full max-w-md p-8 rounded-lg shadow-2xl  backdrop-blur-md">
         <div className="text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
-            Welcome Back to True Feedback
+          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6 text-gray-900">
+            Welcome Back to YapNap
           </h1>
-          <p className="mb-4">Sign in to continue your secret conversations</p>
+          <p className="mb-4 text-gray-800">Sign in to continue your secret conversations</p>
         </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -74,8 +74,11 @@ export default function SignInForm() {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email/Username</FormLabel>
-                  <Input {...field} />
+                  <FormLabel className="text-gray-800">Email/Username</FormLabel>
+                  <Input
+                    {...field}
+                    className="bg-transparent border-b border-blue-400 focus:outline-none focus:border-blue-500 text-gray-800 placeholder-gray-400"
+                  />
                   <FormMessage />
                 </FormItem>
               )}
@@ -85,19 +88,25 @@ export default function SignInForm() {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
-                  <Input type="password" {...field} />
+                  <FormLabel className="text-gray-800">Password</FormLabel>
+                  <Input
+                    type="password"
+                    {...field}
+                    className="bg-transparent border-b border-blue-400 focus:outline-none focus:border-blue-500 text-gray-800 placeholder-gray-400"
+                  />
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button className='w-full' type="submit">Sign In</Button>
+            <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+              Sign In
+            </Button>
           </form>
         </Form>
         <div className="text-center mt-4">
           <p>
             Not a member yet?{' '}
-            <Link href="/sign-up" className="text-blue-600 hover:text-blue-800">
+            <Link href="/sign-up" className="text-blue-900 hover:text-black">
               Sign up
             </Link>
           </p>
