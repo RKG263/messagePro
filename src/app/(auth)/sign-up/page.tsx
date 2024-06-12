@@ -101,10 +101,10 @@ export default function SignUpForm() {
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600">
       <div className="w-full max-w-md p-8 rounded-lg shadow-2xl  backdrop-blur-md">
         <div className="text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6 text-gray-900">
+          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6 text-white">
             HoP in YapNap
           </h1>
-          <p className="mb-4 text-gray-800">Sign up to start your anonymous adventure</p>
+          <p className="mb-4 text-white">Sign up to start your anonymous adventure</p>
         </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

@@ -3,11 +3,11 @@ import Link from 'next/link';
 const Footer = () => {
   return (
     <div>
-        <footer className="shadow-2xl text-center p-6 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 text-white">
+        <footer className="shadow-2xl backdrop-blur-md text-center p-6 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 text-white">
   <div className="container mx-auto">
     <div className="flex flex-col md:flex-row justify-between items-center">
       <p className="mb-4 md:mb-0">
-        © 2023 True Feedback. All rights reserved.
+        © 2024 YapNap. All rights reserved.
       </p>
       <div className="flex space-x-4">
         <Link href="/privacy-policy" className="hover:underline">

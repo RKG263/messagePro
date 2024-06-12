@@ -18,9 +18,10 @@ export default function Home() {
   return (
     <>
       {/* Main content */}
-      <main className="flex-grow flex flex-col md:flex-row items-center justify-center px-4 md:px-24 py-12 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 text-white">
+     <div className='h-screen'>
+     <main className="flex-grow flex h-full flex-col md:flex-row items-center justify-center px-4  md:px-24 py-10 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 text-white">
         {/* Left section */}
-        <section className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+        <section className=" md:w-1/2 text-center md:text-left mb-8 md:mb-0">
           <h1 className="text-3xl md:text-5xl font-bold drop-shadow-lg">
             Empower Your Voice with Anonymous Feedback
           </h1>
@@ -60,6 +61,7 @@ export default function Home() {
           </Carousel>
         </div>
       </main>
+     </div>
 
       {/* Footer */}
     
