@@ -51,7 +51,7 @@ export function MessageCard({ message, onMessageDelete }: MessageCardProps) {
   };
 
   return (
-<Card className="card-bordered rounded-lg shadow-2xl" style={{ background: 'linear-gradient(to right, #4a148c, #7b1fa2)' }}>
+<Card className="card-bordered rounded-lg bg-black shadow-2xl"  >
   <CardHeader className="px-4 py-3">
     <div className="flex justify-between items-center">
       <CardTitle className="text-lg font-semibold text-white">{message.content}</CardTitle>

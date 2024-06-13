@@ -73,12 +73,12 @@ const Page = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 text-white">
+    <div className="flex flex-col min-h-screen bg-black text-white">
       <Navbar />
       <div className="flex flex-1 flex-col md:flex-row items-center justify-center px-4 py-6 md:px-24 h-full">
         {/* Left side */}
         <section className="flex-1  mt-[-50px] p-6 text-center md:text-left mb-8 md:mb-0 flex flex-col justify-center">
-          <div className="max-w-md mx-auto md:mx-0">
+          <div className="max-w-m mx-auto md:mx-0">
             <Image
               src={imgurl}
               alt="Description of image"
@@ -105,7 +105,7 @@ const Page = () => {
             />
             <Button
               onClick={handleOnSubmit}
-              className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-black"
+              className="w-full bg-default text-white py-2 px-4 rounded-md hover:bg-orange-800"
               disabled={!accepting}
             >
               {accepting ? "Send" : "Unavailable"}

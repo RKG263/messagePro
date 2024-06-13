@@ -21,6 +21,8 @@ import axios, { AxiosError } from 'axios';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { signUpSchema } from '@/schemas/signUpSchema';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 export default function SignUpForm() {
   const [username, setUsername] = useState('');
@@ -98,10 +100,12 @@ export default function SignUpForm() {
 
   
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600">
-      <div className="w-full max-w-md p-8 rounded-lg shadow-2xl  backdrop-blur-md">
+    <>
+    <Navbar/>
+    <div className="flex justify-center items-center min-h-screen bg-black">
+      <div className="w-full max-w-md p-8 rounded-lg shadow-2xl bg-gray-800 backdrop-blur-md">
         <div className="text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6 text-white">
+          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6 text-default">
             HoP in YapNap
           </h1>
           <p className="mb-4 text-white">Sign up to start your anonymous adventure</p>
@@ -113,14 +117,14 @@ export default function SignUpForm() {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-gray-800">Username</FormLabel>
+                  <FormLabel className="text-white">Username</FormLabel>
                   <Input
                     {...field}
                     onChange={(e) => {
                       field.onChange(e);
                       setUsername(e.target.value);
                     }}
-                    className="bg-transparent border-b border-blue-400 focus:outline-none focus:border-blue-500 text-gray-800 placeholder-gray-400"
+                    className="bg-transparent border-b border-blue-400 focus:outline-none focus:border-blue-500 text-white placeholder-white"
                   />
                   {isCheckingUsername && <Loader2 className="animate-spin" />}
                   {!isCheckingUsername && usernameMessage && (
@@ -128,7 +132,7 @@ export default function SignUpForm() {
                       className={`text-sm ${
                         usernameMessage === 'Username is unique'
                           ? 'text-green-300'
-                          : 'text-red-300'
+                          : 'text-red-500'
                       }`}
                     >
                       {usernameMessage}
@@ -143,13 +147,13 @@ export default function SignUpForm() {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-gray-800">Email</FormLabel>
+                  <FormLabel className="text-white">Email</FormLabel>
                   <Input
                     {...field}
                     name="email"
-                    className="bg-transparent border-b border-blue-400 focus:outline-none focus:border-blue-500 text-gray-800 placeholder-gray-400"
+                    className="bg-transparent border-b border-blue-400 focus:outline-none focus:border-blue-500 text-white placeholder-white"
                   />
-                  <p className='text-gray-600 text-sm'>We will send you a verification code</p>
+                  <p className='text-gray-200 text-sm'>We will send you a verification code</p>
                   <FormMessage />
                 </FormItem>
               )}
@@ -160,18 +164,18 @@ export default function SignUpForm() {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-gray-800">Password</FormLabel>
+                  <FormLabel className="text-white">Password</FormLabel>
                   <Input
                     type="password"
                     {...field}
                     name="password"
-                    className="bg-transparent border-b border-blue-400 focus:outline-none focus:border-blue-500 text-gray-800 placeholder-gray-400"
+                    className="bg-transparent border-b border-blue-400 focus:outline-none focus:border-blue-500 text-white placeholder-white"
                   />
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit" className='w-full bg-blue-600 hover:bg-blue-700 text-white' disabled={isSubmitting}>
+            <Button type="submit" className='w-full bg-default hover:bg-orange-800 text-white' disabled={isSubmitting}>
               {isSubmitting ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -184,15 +188,18 @@ export default function SignUpForm() {
           </form>
         </Form>
         <div className="text-center mt-4">
-          <p>
+          <p className="text-white">
+
             Already a member?{' '}
-            <Link href="/sign-in" className="text-blue-900 hover:text-black">
+            <Link href="/sign-in" className="text-default hover:text-orange-800">
               Sign in
             </Link>
           </p>
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
   
   

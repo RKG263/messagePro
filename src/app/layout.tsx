@@ -7,7 +7,7 @@ import { Toaster } from '@/components/ui/toaster';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'True Feedback',
+  title: 'YapNap',
   description: 'Real feedback from real people.',
 };
 
@@ -19,7 +19,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" >
       <AuthProvider>
-        <body className={inter.className} style={{ background: 'linear-gradient(to right, #38b2ac, #4299e1, #9f7aea)' }}>
+        <body className={inter.className} style={{ backgroundColor: 'black' }}>
           {children}
           <Toaster />
         </body>

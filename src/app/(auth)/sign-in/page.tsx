@@ -17,7 +17,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/components/ui/use-toast';
 import { signInSchema } from '@/schemas/signInSchema';
-
+import NavBar from '@/components/Navbar'
+import Footer from '@/components/Footer';
 export default function SignInForm() {
   const router = useRouter();
 
@@ -59,10 +60,12 @@ export default function SignInForm() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600">
-      <div className="w-full max-w-md p-8 rounded-lg shadow-2xl  backdrop-blur-md">
+    <>
+    <NavBar/>
+    <div className="flex justify-center items-center min-h-screen bg-black">
+      <div className="w-full max-w-md p-8 mt-[-20] rounded-lg shadow-2xl backdrop-blur-md bg-gray-800 ">
         <div className="text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6 text-white">
+          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6 text-default">
             Welcome Back to YapNap
           </h1>
           <p className="mb-4 text-white">Sign in to continue your secret conversations</p>
@@ -74,10 +77,10 @@ export default function SignInForm() {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-gray-800">Email/Username</FormLabel>
+                  <FormLabel className="text-white">Email/Username</FormLabel>
                   <Input
                     {...field}
-                    className="bg-transparent border-b border-blue-400 focus:outline-none focus:border-blue-500 text-gray-800 placeholder-gray-400"
+                    className="bg-transparent border-b border-blue-400 focus:outline-none focus:border-blue-500 text-white placeholder-white"
                   />
                   <FormMessage />
                 </FormItem>
@@ -88,30 +91,32 @@ export default function SignInForm() {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-gray-800">Password</FormLabel>
+                  <FormLabel className="text-white">Password</FormLabel>
                   <Input
                     type="password"
                     {...field}
-                    className="bg-transparent border-b border-blue-400 focus:outline-none focus:border-blue-500 text-gray-800 placeholder-gray-400"
+                    className="bg-transparent border-b border-blue-400 focus:outline-none focus:border-blue-500 text-white placeholder-white"
                   />
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+            <Button type="submit" className="w-full bg-default hover:bg-orange-700 text-white">
               Sign In
             </Button>
           </form>
         </Form>
         <div className="text-center mt-4">
-          <p>
+          <p className="text-white">
             Not a member yet?{' '}
-            <Link href="/sign-up" className="text-blue-900 hover:text-black">
+            <Link href="/sign-up" className="text-default hover:text-orange-800">
               Sign up
             </Link>
           </p>
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }
