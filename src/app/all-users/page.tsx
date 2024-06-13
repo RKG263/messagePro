@@ -24,8 +24,8 @@ export function SkeletonCard() {
 // Define the Quote component
 const Quote = () => {
   return (
-    <div className="bg-white p-4 rounded-lg text-center mb-8">
-      <h1 className="italic">
+    <div className="bg-black p-4 rounded-lg text-center mb-8">
+      <h1 className="italic text-white">
         "Ever wanted to find someone without them finding you? Anonymously seek
         and ye shall find, without the awkward 'Did you search for me?'
         conversation."
@@ -81,7 +81,7 @@ const Page = () => {
               placeholder="Search users..."
               className="w-full border-2 border-gray-300 bg-white h-12 px-5 pr-10 rounded-lg text-sm focus:outline-none"
             />
-            <button className="absolute right-3 top-2/4 transform -translate-y-2/4 text-gray-500 hover:text-gray-700">
+            <button className="absolute right-3 top-2/4 transform -translate-y-2/4 text-default hover:text-orange-800">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"

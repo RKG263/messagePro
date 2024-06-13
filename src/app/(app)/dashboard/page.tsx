@@ -137,8 +137,8 @@ function UserDashboard() {
  
     return (
      <>
-        <div className="shadow-2xl  backdrop-blur-md h-full m-10 md:mx-8 lg:mx-auto p-6 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 rounded w-full max-w-6xl">
-          <h1 className="text-4xl font-bold text-white mb-4">User Dashboard</h1>
+        <div className="shadow-2xl  backdrop-blur-md h-full m-10 md:mx-8 lg:mx-auto p-6 bg-black rounded w-full max-w-6xl">
+          <h1 className="text-4xl font-bold text-default mb-4">User Dashboard</h1>
     
           <div className="mb-4">
             <h2 className="text-lg font-semibold text-white mb-2">Copy Your Unique Link</h2>{' '}
@@ -149,7 +149,7 @@ function UserDashboard() {
                 disabled
                 className="input input-bordered w-full p-2 mr-2"
               />
-              <Button onClick={copyToClipboard} className="bg-white text-blue-500 hover:bg-blue-400 hover:text-white">Copy</Button>
+              <Button onClick={copyToClipboard} className="bg-default text-white hover:bg-orange-800 hover:text-white">Copy</Button>
             </div>
           </div>
     
@@ -159,13 +159,13 @@ function UserDashboard() {
               checked={acceptMessages}
               onCheckedChange={handleSwitchChange}
               disabled={isSwitchLoading}
-              className="text-white"
+              className="text-default bg-default"
             />
             <span className="ml-2 text-white">
               Accept Messages: {acceptMessages ? 'On' : 'Off'}
             </span>
           </div>
-          <Separator className="border-white" />
+          <Separator className="border-default" />
     
           <Button
             className="mt-4 text-white border-white hover:bg-white hover:text-purple-600"
@@ -176,9 +176,9 @@ function UserDashboard() {
             }}
           >
             {isLoading ? (
-              <Loader2 className="h-4 w-4 text-blue-500 animate-spin" />
+              <Loader2 className="h-4 w-4 text-default animate-spin" />
             ) : (
-              <RefreshCcw className="h-4 w-4 text-blue-500" />
+              <RefreshCcw className="h-4 w-4 text-default" />
             )}
           </Button>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">

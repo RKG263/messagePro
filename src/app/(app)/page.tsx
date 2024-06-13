@@ -19,10 +19,10 @@ export default function Home() {
     <>
       {/* Main content */}
      <div className='h-screen'>
-     <main className="flex-grow flex h-full flex-col md:flex-row items-center justify-center px-4  md:px-24 py-10 bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 text-white">
+     <main className="flex-grow flex h-full flex-col md:flex-row items-center justify-center px-4  md:px-24 py-10 bg-black text-default">
         {/* Left section */}
         <section className=" md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-          <h1 className="text-3xl md:text-5xl font-bold drop-shadow-lg">
+          <h1 className="text-3xl  md:text-5xl font-bold drop-shadow-lg">
             Empower Your Voice with Anonymous Feedback
           </h1>
           <p className="mt-3 md:mt-4 text-base md:text-lg drop-shadow-md">
@@ -40,7 +40,7 @@ export default function Home() {
               {messages.map((message, index) => (
                 <CarouselItem key={index} className="p-4 w-full h-full">
                   <Card className="bg-white text-black shadow-xl rounded-lg overflow-hidden h-full transition-transform transform hover:scale-105">
-                    <CardHeader className="bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 text-white p-4">
+                    <CardHeader className="bg-gradient-to-r from-orange-600 to-yellow-500 text-white p-4">
                       <CardTitle className="text-lg font-semibold">
                         {message.title}
                       </CardTitle>
