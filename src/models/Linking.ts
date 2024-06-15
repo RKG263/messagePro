@@ -2,12 +2,17 @@ import mongoose, { Schema, Document } from "mongoose";
 
 export interface Reply extends Document {
   content: string;
+  username:string;
   createdAt: Date;
 }
 
 const ReplySchema: Schema<Reply> = new mongoose.Schema({
   content: {
     type: String,
+    required:true
+  },
+  username:{
+    type:String,
     required:true
   },
   createdAt: {

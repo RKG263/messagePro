@@ -76,10 +76,13 @@ const Page = () => {
             <Image
               src={imgurl}
               alt="User Avatar"
-              className="w-80 h-80 rounded-full shadow-md mb-2"
+              className="w-80 h-80  rounded-full shadow-md mb-2"
             />
-            <h1 className="text-center text-4xl font-extrabold text-white mb-4">
-              YapNap
+            <h1 className="text-center text-default text-4xl font-extrabold  mb-4">
+            Ask
+             <br/>
+             Ananomously 
+             
             </h1>
           </div>
 
@@ -89,13 +92,13 @@ const Page = () => {
 
           <div className="flex flex-col space-y-3 p-4">
             <Link
-              className="block text-center text-white bg-default py-2 px-4 rounded hover:bg-orange-700"
+              className="block text-center text-white border-2 border-default bg-black  py-2 px-4 rounded hover:bg-orange-700"
               href="/home"
             >
               Home
             </Link>
             <Link
-              className="block text-center text-white bg-red-500 py-2 px-4 rounded hover:bg-red-600"
+              className="block text-center text-white bg-black border-2 border-default  py-2 px-4 rounded hover:bg-red-600"
               href="/logout"
             >
               Logout
@@ -128,7 +131,7 @@ const Page = () => {
                 : message.map((item, key) => (
                     <React.Fragment key={key}>
                       <LinkMessageCard msg={item} />
-                      <Separator />
+                      <Separator className="bg-default" />
                     </React.Fragment>
                   ))}
             </div>
@@ -140,13 +143,15 @@ const Page = () => {
               value={post}
               placeholder="Type your message here..."
               onChange={(e) => setPost(e.target.value)}
-              className="flex-1 p-2 rounded-lg border-2 border-gray-300"
+              className="flex-1 p-2 rounded-lg border-2 bg-black border-default text-white "
             />
             <button
-              className="bg-orange-500 text-white ml-1 py-1 px-2 rounded-lg hover:bg-orange-600 flex items-center justify-center w-11 h-11"
+              className="bg-black text-white border-2 border-default ml-1 py-1 px-2 rounded-lg hover:bg-orange-600 flex items-center justify-center w-11 h-11"
+            
               onClick={handleOnSubmit}
+              
             >
-              <FaPaperPlane className="text-xl" />
+              <FaPaperPlane className="text-xl text-default" />
             </button>
           </div>
         </section>

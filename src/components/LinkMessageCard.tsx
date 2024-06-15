@@ -4,7 +4,7 @@ import imgurl from "../../public/assets/mainlogo.png";
 import Image from 'next/image';
 import dayjs from 'dayjs';
 import { Linking } from '@/models/Linking';
-
+import Link from 'next/link';
 interface LinkMessageCardProps {
   msg: Linking; 
 }
@@ -16,7 +16,7 @@ const LinkMessageCard: React.FC<LinkMessageCardProps> = ({ msg }) => {
       <Image
         src={imgurl}
         alt="User Avatar"
-        className="w-12 h-12 rounded-full shadow-md mr-4"
+        className="w-12 h-12 border-2 border-default rounded-full shadow-md mr-4"
       />
       <div className="flex-1">
         <div className="flex items-center justify-between">
@@ -27,7 +27,9 @@ const LinkMessageCard: React.FC<LinkMessageCardProps> = ({ msg }) => {
           {msg.message}
         </p>
         <div className="mt-4 flex justify-end">
+          <Link href={`/reply-link/${msg._id}`} >
           <button className="bg-black text-white py-1 px-3 rounded hover:bg-orange-600">Reply</button>
+          </Link>
         </div>
       </div>
     </div>

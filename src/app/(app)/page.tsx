@@ -45,11 +45,11 @@ export default function Home() {
                         {message.title}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="flex flex-col items-start p-4 space-y-2 h-full">
-                      <Mail className="flex-shrink-0 text-purple-500 w-6 h-6" />
-                      <div className="overflow-auto">
-                        <p className="text-gray-700">{message.content}</p>
-                        <p className="text-xs text-gray-500 mt-2">
+                    <CardContent className="flex flex-col items-start bg-black text-white p-4 space-y-2 h-full">
+                      <Mail className="flex-shrink-0 text-default w-6 h-6" />
+                      <div className="overflow-auto ">
+                        <p className="text-white">{message.content}</p>
+                        <p className="text-xs text-gray-300 mt-2">
                           {message.received}
                         </p>
                       </div>

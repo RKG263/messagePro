@@ -79,7 +79,7 @@ const Page = () => {
             <input
               type="text"
               placeholder="Search users..."
-              className="w-full border-2 border-gray-300 bg-white h-12 px-5 pr-10 rounded-lg text-sm focus:outline-none"
+              className="w-full border-2  bg-black text-white h-12 px-5 pr-10 rounded-lg text-sm focus:outline-none"
             />
             <button className="absolute right-3 top-2/4 transform -translate-y-2/4 text-default hover:text-orange-800">
               <svg
@@ -108,7 +108,7 @@ const Page = () => {
       </div>
       <div className="flex-grow px-4 md:px-20 mx-4 md:mx-20">
         {/* Render the Quote component */}
-        <Quote />
+       
         {loading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {Array.from({ length: 10 }).map((_, index) => (
