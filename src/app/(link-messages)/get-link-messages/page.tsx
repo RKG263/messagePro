@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import imgurl from "../../../../public/assets/mainlogo.png";
+import imgurl from "../../../../public/assets/mainlogo1.png";
 import Image from "next/image";
 import Link from "next/link";
 import { FaPaperPlane } from "react-icons/fa"; // Import the send icon

@@ -22,17 +22,7 @@ export function SkeletonCard() {
 }
 
 // Define the Quote component
-const Quote = () => {
-  return (
-    <div className="bg-black p-4 rounded-lg text-center mb-8">
-      <h1 className="italic text-white">
-        "Ever wanted to find someone without them finding you? Anonymously seek
-        and ye shall find, without the awkward 'Did you search for me?'
-        conversation."
-      </h1>
-    </div>
-  );
-};
+
 
 interface User {
   username?: string;
