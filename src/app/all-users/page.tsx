@@ -7,19 +7,8 @@ import axios, { AxiosError } from "axios";
 import { useToast } from "@/components/ui/use-toast";
 import { ApiResponse } from "@/types/ApiResponse";
 import { Skeleton } from "@/components/ui/skeleton";
-
+import { SkeletonCard } from "@/components/SkeletonCard";
 // Define the SkeletonCard component
-export function SkeletonCard() {
-  return (
-    <div className="flex flex-col space-y-3 p-4">
-      <Skeleton className="h-[125px] w-full rounded-xl" />
-      <div className="space-y-2">
-        <Skeleton className="h-4 w-full" />
-        <Skeleton className="h-4 w-[70%]" />
-      </div>
-    </div>
-  );
-}
 
 // Define the Quote component
 
