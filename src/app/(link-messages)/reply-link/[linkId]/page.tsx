@@ -15,6 +15,7 @@ import dayjs from "dayjs";
 import { Reply } from "./../../../../models/Linking";
 import { useSession } from "next-auth/react";
 import { useRouter } from 'next/navigation'
+import Navbar from "@/components/Navbar";
 
 interface PostResult {
   username: string;
@@ -105,9 +106,11 @@ const Page = () => {
   };
 
   return (
-    <div className="flex h-screen bg-gray-900">
+    <>
+  <Navbar/>
+    <div className="flex flex-col md:flex-row bg-gray-900 h-screen">
       {/* Left Section */}
-      <section className="w-1/3 p-3 relative">
+      <section className="md:w-1/3 p-3 relative order-1 md:order-1">
         <div className="h-full p-6 bg-black rounded-lg shadow-md">
           {/* User Info and Post */}
           <ScrollArea
@@ -138,31 +141,15 @@ const Page = () => {
               </p>
             </div>
           </ScrollArea>
-
-          {/* Navigation Links */}
-          <div className="flex flex-col space-y-3 p-4">
-            <Link
-              className="block text-center text-white border-2 bg-black border-default py-2 px-4 rounded hover:bg-orange-700"
-              href="/"
-            >
-              Home
-            </Link>
-            <Link
-              className="block text-center text-white bg-black border-2 border-default py-2 px-4 rounded hover:bg-red-600"
-              href="/logout"
-            >
-              Logout
-            </Link>
-          </div>
         </div>
       </section>
-
+  
       {/* Right Section */}
-      <section className="w-2/3 p-3 flex flex-col">
+      <section className="md:w-2/3 p-3 flex flex-col order-2 md:order-2">
         {/* Right Bottom Section (Large) */}
         <section className="p-6 h-full bg-black text-white rounded-lg shadow-md relative">
           <ScrollArea
-            className="h-3/4 w-full rounded-md "
+            className="h-3/4 w-full rounded-md"
             style={{ height: "90%" }}
           >
             <div className="p-4 mb-3">
@@ -171,7 +158,7 @@ const Page = () => {
                 reply.map((item, key) => <ReplyCard key={key} rep={item} />)}
             </div>
           </ScrollArea>
-
+  
           {/* Input Field and Send Button */}
           <div className="absolute bottom-4 left-0 right-0 ml-4 mr-4 flex items-center">
             <input
@@ -191,7 +178,10 @@ const Page = () => {
         </section>
       </section>
     </div>
+    </>
   );
+  
+  
 };
 
 export default Page;

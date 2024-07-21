@@ -14,6 +14,7 @@ import { User } from "next-auth";
 import { useToast } from "@/components/ui/use-toast";
 import { useSession } from "next-auth/react";
 import { Skeleton } from "@/components/ui/skeleton";
+import Navbar from "@/components/Navbar";
 
 const dummy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const Page = () => {
@@ -68,6 +69,8 @@ const Page = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="min-h-screen bg-gray-900 p-4 mb-8">
       <div className="flex flex-col lg:flex-row lg:space-x-4">
         {/* Left section */}
@@ -157,6 +160,7 @@ const Page = () => {
         </section>
       </div>
     </div>
+    </>
   );
 };
 
